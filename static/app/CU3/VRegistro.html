@@ -14,8 +14,6 @@
             <ul class="nav navbar-nav navbar-left">
 <li><a ng-click="VPrincipal0()">
   Regresar</a></li>
-<li><a ng-click="ARegistro1()">
-  Registro</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -25,6 +23,19 @@
     </div>
 </nav>
 
+    <form name="fPersonaForm" ng-submit="ARegistro1(fPersonaForm.$valid)" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' :  fPersonaSubmitted && fPersonaForm.nombres.$invalid && fPersonaForm.nombres.$pristine && fPersonaSubmitted}"><label for="fPersona_nombres">Nombres</label><input id="fPersona_nombres" type="text" name="nombres" class="form-control" ng-model="fPersona.nombres" placeholder="Nombres"  ng-minlength="2" ng-maxlength="128" same-as="fPersona.Nombres"/><p ng-show="fPersonaSubmitted && fPersonaForm.nombres.$invalid" class="help-block">Error en campo Nombres.</p></div>
+            <div class="form-group" ng-class="{ 'has-error' :  fPersonaSubmitted && fPersonaForm.apellidos.$invalid && fPersonaForm.apellidos.$pristine && fPersonaSubmitted}"><label for="fPersona_apellidos">Apellidos</label><input id="fPersona_apellidos" type="text" name="apellidos" class="form-control" ng-model="fPersona.apellidos" placeholder="Apellidos"  ng-minlength="2" ng-maxlength="128" same-as="fPersona.Apellidos"/><p ng-show="fPersonaSubmitted && fPersonaForm.apellidos.$invalid" class="help-block">Error en campo Apellidos.</p></div>
+            <div class="form-group" ng-class="{ 'has-error' :  fPersonaSubmitted && fPersonaForm.nickname.$invalid && fPersonaForm.nickname.$pristine && fPersonaSubmitted}"><label for="fPersona_nickname">Nickname</label><input id="fPersona_nickname" type="text" name="nickname" class="form-control" ng-model="fPersona.nickname" placeholder="Nickname" required ng-minlength="2" ng-maxlength="128" same-as="fPersona.Nickname"/><p ng-show="fPersonaSubmitted && fPersonaForm.nickname.$invalid" class="help-block">Error en campo Nickname.</p></div>
+            <div class="form-group" ng-class="{ 'has-error' :  fPersonaSubmitted && fPersonaForm.contrase_a.$invalid && fPersonaForm.contrase_a.$pristine && fPersonaSubmitted}"><label for="fPersona_contrase_a">Contraseña</label><input id="fPersona_contrase_a" type="text" name="contrase_a" class="form-control" ng-model="fPersona.contrase_a" placeholder="Contraseña" required ng-minlength="2" ng-maxlength="16" same-as="fPersona.Contraseña "/><p ng-show="fPersonaSubmitted && fPersonaForm.contrase_a.$invalid" class="help-block">Error en campo Contraseña.</p></div>
+            <div class="form-group" ng-class="{ 'has-error' :  fPersonaSubmitted && fPersonaForm.edad.$invalid && fPersonaForm.edad.$pristine && fPersonaSubmitted}"><label for="fPersona_edad">Edad</label><input id="fPersona_edad" type="number" name="edad" class="form-control" ng-model="fPersona.edad" placeholder="Edad"  ng-minlength="1" ng-maxlength="3" same-as="fPersona.Edad"/><p ng-show="fPersonaSubmitted && fPersonaForm.edad.$invalid" class="help-block">Error en campo Edad.</p></div>
+            <div class="form-group" ng-class="{ 'has-error' :  fPersonaSubmitted && fPersonaForm.telefono.$invalid && fPersonaForm.telefono.$pristine && fPersonaSubmitted}"><label for="fPersona_telefono">Telefono</label><input id="fPersona_telefono" type="text" name="telefono" class="form-control" ng-model="fPersona.telefono" placeholder="Telefono" required same-as="fPersona.Telefono"/><p ng-show="fPersonaSubmitted && fPersonaForm.telefono.$invalid" class="help-block">Error en campo Telefono.</p></div>
+            <div class="form-group" ng-class="{ 'has-error' :  fPersonaSubmitted && fPersonaForm.correo.$invalid && fPersonaForm.correo.$pristine && fPersonaSubmitted}"><label for="fPersona_correo">Correo</label><input id="fPersona_correo" type="email" name="correo" class="form-control" ng-model="fPersona.correo" placeholder="Correo" required ng-pattern="/[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/"/><p ng-show="fPersonaSubmitted && fPersonaForm.correo.$invalid" class="help-block">Error en campo Correo.</p></div>
+        <button type="submit" class="btn btn-perso btn-lg btn-block">
+            <span class="glyphicon glyphicon-flash"></span>Registro
+        </button>
+    </form>
+    <hr />
 
 
 <div id="right"></div>

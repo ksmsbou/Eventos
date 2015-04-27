@@ -14,8 +14,6 @@
             <ul class="nav navbar-nav navbar-left">
 <li><a ng-click="VRegistro0()">
   Registrarse</a></li>
-<li><a ng-click="AIdentificacion1()">
-  Conectarse</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -25,6 +23,14 @@
     </div>
 </nav>
 
+    <form name="fUsuarioForm" ng-submit="AIdentificacion1(fUsuarioForm.$valid)" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' :  fUsuarioSubmitted && fUsuarioForm.unickname.$invalid && fUsuarioForm.unickname.$pristine && fUsuarioSubmitted}"><label for="fUsuario_unickname">Nickname</label><input id="fUsuario_unickname" type="text" name="unickname" class="form-control" ng-model="fUsuario.unickname" placeholder="Nickname" required/><p ng-show="fUsuarioSubmitted && fUsuarioForm.unickname.$invalid" class="help-block">Error en campo Nickname.</p></div>
+            <div class="form-group" ng-class="{ 'has-error' :  fUsuarioSubmitted && fUsuarioForm.ucontrasena.$invalid && fUsuarioForm.ucontrasena.$pristine && fUsuarioSubmitted}"><label for="fUsuario_ucontrasena">Contraseña</label><input id="fUsuario_ucontrasena" type="text" name="ucontrasena" class="form-control" ng-model="fUsuario.ucontrasena" placeholder="Contraseña" required ng-minlength="2" ng-maxlength="16" same-as="fUsuario.Contraseña "/><p ng-show="fUsuarioSubmitted && fUsuarioForm.ucontrasena.$invalid" class="help-block">Error en campo Contraseña.</p></div>
+        <button type="submit" class="btn btn-perso btn-lg btn-block">
+            <span class="glyphicon glyphicon-flash"></span>Conectarse
+        </button>
+    </form>
+    <hr />
 
 
 <div id="right"></div>
