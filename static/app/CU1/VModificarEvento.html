@@ -49,17 +49,66 @@
     </div>
 </nav>
 
+    <div class = "col-lg-offset-4">
     <form name="fEventoForm" ng-submit="AModificarEvento0(fEventoForm.$valid)" novalidate>
-            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.nombre.$invalid && fEventoForm.nombre.$pristine && fEventoSubmitted}"><label for="fEvento_nombre">Nombre</label><input id="fEvento_nombre" type="text" name="nombre" class="form-control" ng-model="fEvento.nombre" placeholder="Nombre" required ng-minlength="2" ng-maxlength="128" same-as="fEvento.Nombre del evento"/><p ng-show="fEventoSubmitted && fEventoForm.nombre.$invalid" class="help-block">Error en campo Nombre.</p></div>
-            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.descripccion.$invalid && fEventoForm.descripccion.$pristine && fEventoSubmitted}"><label for="fEvento_descripccion">Descripccion</label><textarea id="fEvento_descripccion" name="descripccion" class="form-control" ng-model="fEvento.descripccion" placeholder="Descripccion" required ng-minlength="2" ng-maxlength="256" same-as="fEvento.Descripccion"></textarea><p ng-show="fEventoSubmitted && fEventoForm.descripccion.$invalid" class="help-block">Error en campo Descripccion.</p></div>
-            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.ubicacion.$invalid && fEventoForm.ubicacion.$pristine && fEventoSubmitted}"><label for="fEvento_ubicacion">Ubicacion</label><textarea id="fEvento_ubicacion" name="ubicacion" class="form-control" ng-model="fEvento.ubicacion" placeholder="Ubicacion" required ng-minlength="2" ng-maxlength="256" same-as="fEvento.Ubicación "></textarea><p ng-show="fEventoSubmitted && fEventoForm.ubicacion.$invalid" class="help-block">Error en campo Ubicacion.</p></div>
-            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.fecha.$invalid && fEventoForm.fecha.$pristine && fEventoSubmitted}"><label for="fEvento_fecha">Fecha</label><input id="fEvento_fecha" type="date" name="fecha" class="form-control" ng-model="fEvento.fecha" placeholder="Fecha" required ng-minlength="11" ng-maxlength="11" same-as="fEvento.DD/MM/AA" ng-pattern="^\d{1,2}\/\d{1,2}\/\d{2,4}$"/><p ng-show="fEventoSubmitted && fEventoForm.fecha.$invalid" class="help-block">Error en campo Fecha.</p></div>
-            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.capacidad.$invalid && fEventoForm.capacidad.$pristine && fEventoSubmitted}"><label for="fEvento_capacidad">Capacidad</label><input id="fEvento_capacidad" type="number" name="capacidad" class="form-control" ng-model="fEvento.capacidad" placeholder="Capacidad" required ng-minlength="1" ng-maxlength="10000000000000000000" same-as="fEvento.Capacidad"/><p ng-show="fEventoSubmitted && fEventoForm.capacidad.$invalid" class="help-block">Error en campo Capacidad.</p></div>
-            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.disponibilidad.$invalid && fEventoForm.disponibilidad.$pristine && fEventoSubmitted}"><label for="fEvento_disponibilidad">Disponibilidad</label><input id="fEvento_disponibilidad" type="number" name="disponibilidad" class="form-control" ng-model="fEvento.disponibilidad" placeholder="Disponibilidad" required ng-minlength="1" ng-maxlength="10000000000000000000" same-as="fEvento.Disponibilidad"/><p ng-show="fEventoSubmitted && fEventoForm.disponibilidad.$invalid" class="help-block">Error en campo Disponibilidad.</p></div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.nombre.$invalid && fEventoForm.nombre.$pristine && fEventoSubmitted}">
+              <label for="fEvento_nombre">Nombre</label>
+                <div class="col-lg-5 input-group">               
+                <input id="fEvento_nombre" type="text" name="nombre" class="form-control" ng-model="fEvento.nombre" placeholder="Nombre" required ng-minlength="2" ng-maxlength="128" same-as="fEvento.Nombre del evento"/>
+                </div>
+                <p ng-show="fEventoSubmitted && fEventoForm.nombre.$invalid" class="help-block">Error en campo Nombre.</p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.descripccion.$invalid && fEventoForm.descripccion.$pristine && fEventoSubmitted}">
+              <label for="fEvento_descripccion">Descripccion</label>
+                <div class="col-lg-5 input-group">
+                <textarea id="fEvento_descripccion" name="descripccion" class="form-control" ng-model="fEvento.descripccion" placeholder="Descripccion" required ng-minlength="2" ng-maxlength="256" same-as="fEvento.Descripccion"></textarea>
+                </div>
+                <p ng-show="fEventoSubmitted && fEventoForm.descripccion.$invalid" class="help-block">Error en campo Descripccion.</p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.ubicacion.$invalid && fEventoForm.ubicacion.$pristine && fEventoSubmitted}">
+              <label for="fEvento_ubicacion">Ubicacion</label>
+                <div class="col-lg-5 input-group">
+                <textarea id="fEvento_ubicacion" name="ubicacion" class="form-control" ng-model="fEvento.ubicacion" placeholder="Ubicacion" required ng-minlength="2" ng-maxlength="256" same-as="fEvento.Ubicación "></textarea>
+                </div>
+                <p ng-show="fEventoSubmitted && fEventoForm.ubicacion.$invalid" class="help-block">Error en campo Ubicacion.</p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.fecha.$invalid && fEventoForm.fecha.$pristine && fEventoSubmitted}">
+              <label for="fEvento_fecha">Fecha</label>
+                <div class="col-lg-5 input-group">
+                <input id="fEvento_fecha" type="date" name="fecha" class="form-control" ng-model="fEvento.fecha" placeholder="Fecha" required ng-minlength="11" ng-maxlength="11" same-as="fEvento.DD/MM/AA" ng-pattern="^\d{1,2}\/\d{1,2}\/\d{2,4}$"/>
+                </div>
+                <p ng-show="fEventoSubmitted && fEventoForm.fecha.$invalid" class="help-block">Error en campo Fecha.</p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.capacidad.$invalid && fEventoForm.capacidad.$pristine && fEventoSubmitted}">
+              <label for="fEvento_capacidad">Capacidad</label>
+                <div class="col-lg-5 input-group">
+                <input id="fEvento_capacidad" type="number" name="capacidad" class="form-control" ng-model="fEvento.capacidad" placeholder="Capacidad" required ng-minlength="1" ng-maxlength="10000000000000000000" same-as="fEvento.Capacidad"/>
+                </div>
+                <p ng-show="fEventoSubmitted && fEventoForm.capacidad.$invalid" class="help-block">Error en campo Capacidad.</p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fEventoSubmitted && fEventoForm.disponibilidad.$invalid && fEventoForm.disponibilidad.$pristine && fEventoSubmitted}">
+              <label for="fEvento_disponibilidad">Disponibilidad</label>
+                <div class="col-lg-5 input-group">
+                <input id="fEvento_disponibilidad" type="number" name="disponibilidad" class="form-control" ng-model="fEvento.disponibilidad" placeholder="Disponibilidad" required ng-minlength="1" ng-maxlength="10000000000000000000" same-as="fEvento.Disponibilidad"/>
+                </div>
+                <p ng-show="fEventoSubmitted && fEventoForm.disponibilidad.$invalid" class="help-block">Error en campo Disponibilidad.</p>
+            </div>
+        
+        <div class = "col-lg-3 col-lg-offset-1">
         <button type="submit" class="btn btn-perso btn-lg btn-block">
             <span class="glyphicon glyphicon-flash"></span>Modificar
         </button>
+        </div>
+
     </form>
+    </div>
+
     <hr />
 
 

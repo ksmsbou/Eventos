@@ -49,13 +49,34 @@
     </div>
 </nav>
 
+    <br><br><br><br><br><br><br><br>
+    <div class = "col-lg-offset-4">
     <form name="fUsuarioForm" ng-submit="AIdentificacion1(fUsuarioForm.$valid)" novalidate>
-            <div class="form-group" ng-class="{ 'has-error' :  fUsuarioSubmitted && fUsuarioForm.unickname.$invalid && fUsuarioForm.unickname.$pristine && fUsuarioSubmitted}"><label for="fUsuario_unickname">Nickname</label><input id="fUsuario_unickname" type="text" name="unickname" class="form-control" ng-model="fUsuario.unickname" placeholder="Nickname" required/><p ng-show="fUsuarioSubmitted && fUsuarioForm.unickname.$invalid" class="help-block">Error en campo Nickname.</p></div>
-            <div class="form-group" ng-class="{ 'has-error' :  fUsuarioSubmitted && fUsuarioForm.ucontrasena.$invalid && fUsuarioForm.ucontrasena.$pristine && fUsuarioSubmitted}"><label for="fUsuario_ucontrasena">Contraseña</label><input id="fUsuario_ucontrasena" type="text" name="ucontrasena" class="form-control" ng-model="fUsuario.ucontrasena" placeholder="Contraseña" required ng-minlength="2" ng-maxlength="16" same-as="fUsuario.Contraseña "/><p ng-show="fUsuarioSubmitted && fUsuarioForm.ucontrasena.$invalid" class="help-block">Error en campo Contraseña.</p></div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fUsuarioSubmitted && fUsuarioForm.unickname.$invalid && fUsuarioForm.unickname.$pristine && fUsuarioSubmitted}">
+                <label for="fUsuario_unickname">Nickname</label>
+                    <div class="col-lg-5 input-group">
+                    <input id="fUsuario_unickname" type="text" name="unickname" class="form-control" ng-model="fUsuario.unickname" placeholder="Nickname" required/>
+                    </div>
+                    <p ng-show="fUsuarioSubmitted && fUsuarioForm.unickname.$invalid" class="help-block">Error en campo Nickname.</p>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' :  fUsuarioSubmitted && fUsuarioForm.ucontrasena.$invalid && fUsuarioForm.ucontrasena.$pristine && fUsuarioSubmitted}">
+                <label for="fUsuario_ucontrasena">Contraseña</label>
+                    <div class="col-lg-5 input-group">
+                    <input id="fUsuario_ucontrasena" type="text" name="ucontrasena" class="form-control" ng-model="fUsuario.ucontrasena" placeholder="Contraseña" required ng-minlength="2" ng-maxlength="16" same-as="fUsuario.Contraseña "/>
+                    </div>
+                    <p ng-show="fUsuarioSubmitted && fUsuarioForm.ucontrasena.$invalid" class="help-block">Error en campo Contraseña.</p>
+            </div>
+
+        <div class = "col-lg-3 col-lg-offset-1">
         <button type="submit" class="btn btn-perso btn-lg btn-block">
             <span class="glyphicon glyphicon-flash"></span>Conectarse
         </button>
+        </div>
+
     </form>
+    </div>
     <hr />
 
 
